@@ -90,14 +90,4 @@ for (int row = 0; row < exercise2DArray.GetLength(0); row++)
     Console.WriteLine(sumOfRows);
 }
 
-
-//int counter = 0;
-//do
-//{
-//    counter++;
-
-//    sumOfRows += (exercise2DArray[0, counter]);
-//    Console.WriteLine(sumOfRows);
-//} while (counter != 3);
-
 Console.ReadKey(); 
