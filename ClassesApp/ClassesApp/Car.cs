@@ -16,6 +16,9 @@ namespace ClassesApp
 
         private bool _isLuxury;
 
+        // PUBLIC STATIC VARIABLE
+        public static int numberOfCars = 0;
+
         // Property
         public string Model { get => _model; set => _model = value; }
         public string Brand 
@@ -52,10 +55,17 @@ namespace ClassesApp
         //Custom Constructor
         public Car(string model, string brand, bool isLuxury) 
         {
+            numberOfCars++;
+
             Model = model;
             Brand = brand;
             IsLuxury = isLuxury;
             Console.WriteLine($"A {Brand} of the model {Model} has been created!");
+        }
+
+        public Car()
+        {
+            numberOfCars++;
         }
 
         public void Drive()
