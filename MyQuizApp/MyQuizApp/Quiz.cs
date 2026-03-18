@@ -8,14 +8,70 @@ namespace MyQuizApp
 {
     internal class Quiz
     {
-        private Question[] questions;
+        private Question[] _questions;
+
+        private int _score;
 
         public Quiz(Question[] questions)
         {
-            this.questions = questions;
+            this._questions = questions;
+            _score = 0;
         }
 
-        public void DisplayQuestion(Question question)
+        public void StartQuiz()
+        {
+            Console.WriteLine("Welcome to the Quiz!");
+            int questionNumber = 0;
+
+            foreach (Question question in _questions)
+            {
+                questionNumber++;
+                Console.WriteLine($"Question {questionNumber}");
+                DisplayQuestion(question);
+                int userChoice = GetUserChoice();
+                if (question.IsCorrectAnswer(userChoice))
+                {
+                    Console.WriteLine("Correct!");
+                    _score++;
+                }
+                else 
+                { 
+                    Console.WriteLine($"Incorrect, the correct answer was {question.Answers[question.CorrectAnswerIndex]}"); 
+                }
+            }
+
+            DisplayResults();
+        }
+
+        private void DisplayResults()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("RESULTS");
+            Console.ResetColor();
+
+            Console.WriteLine($"Quiz completed, your score is: {_score} out of {_questions.Length}");
+
+            double percentage = (double)_score / _questions.Length;
+
+            if(percentage >= 0.8)
+            {
+                Console.ForegroundColor= ConsoleColor.Green;
+                Console.WriteLine("Excellent Work!");
+            }
+            else if (percentage >= 0.5)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Good Effort!");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Keep Practicing!");
+            }
+            Console.ResetColor();
+        }
+
+        private void DisplayQuestion(Question question)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(question.QuestionText);
@@ -28,15 +84,6 @@ namespace MyQuizApp
                 Console.Write(i + 1);
                 Console.ResetColor();
                 Console.WriteLine($". {question.Answers[i]}");
-            }
-
-            if( GetUserChoice() == question.CorrectAnswerIndex)
-            {
-                Console.WriteLine("Correct");
-            }
-            else
-            {
-                Console.WriteLine("Incorrect");
             }
         }
 
