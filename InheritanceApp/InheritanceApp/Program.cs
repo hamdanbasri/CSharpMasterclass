@@ -13,6 +13,11 @@
             Employee joe = new Employee("Joe", 36, "Sales Rep", 1234);
             joe.DisplayEmployeeInfo();
 
+            Manager carl = new Manager("Carl", 40, "Manager", 5678, 20);
+            //carl.DisplayManagerInfo();
+            carl.BecomeOlder(5);
+            carl.DisplayPersonInfo();
+
             Console.ReadKey();
         }
     }
@@ -33,6 +38,15 @@
         public void DisplayPersonInfo()
         {
             Console.WriteLine($"Name: {Name}, Age: {Age}");
+        }
+
+        /// <summary>Makes our object older.</summary>
+        /// <param name="years">The parameters that indicates the amount of years the object should age.</param>
+        /// <returns>Returns new age after aging.</returns>
+        public int BecomeOlder(int years)
+        {
+            Age += years;
+            return Age;
         }
     }
 
@@ -57,17 +71,28 @@
         }
     }
 
+    public class Manager : Employee
+    {
+        public int TeamSize { get; private set; }
+
+        public Manager(string name, int age, string jobTitle, int employeeID, int teamSize) 
+            : base(name, age, jobTitle, employeeID)
+        {
+            TeamSize = teamSize;
+        }
+        public void DisplayManagerInfo()
+        {
+            DisplayEmployeeInfo(); // Call method from base class
+            Console.WriteLine($"Team Size: {TeamSize}");
+        }
+    }
+
     // Base Class || Parent Class || Super Class
     class Animal
     {
-        public void Eat()
-        {
-            Console.WriteLine("Eating..");
-        }
-
         public virtual void MakeSound()
         {
-            Console.WriteLine("Animal makes sound");
+            Console.WriteLine("Animal makes a sound");
         }
     }
 
