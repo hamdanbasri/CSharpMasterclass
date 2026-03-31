@@ -53,6 +53,8 @@ namespace AdvancedExercise_HandlingMultipleExceptions
             {
                 Console.WriteLine($"Error: {ex}");
             }
+            finally
+            { Console.WriteLine("Exceptions checked"); }
         }
     }
 }
