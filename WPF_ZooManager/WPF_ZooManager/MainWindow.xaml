@@ -7,8 +7,20 @@
         mc:Ignorable="d"
         Title="Zoo Manager" Height="500" Width="725">
     <Grid>
-        <Label Content="Zoo List" HorizontalAlignment="Left" Margin="34,17,0,0" VerticalAlignment="Top"/>
-        <ListBox Name="listZoos" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="34,48,557,217"/>
+        <Label Content="Zoo List" HorizontalAlignment="Left" Margin="34,17,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ListBox Name="listZoos" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="34,48,557,263" SelectionChanged="listZoos_SelectionChanged"/>
+        <Label Content="Associated Animals List" HorizontalAlignment="Left" Margin="200,17,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ListBox x:Name="listAssociatedAnimals" d:ItemsSource="{d:SampleData ItemCount=8}" Margin="200,48,391,263"/>
+        <ListBox x:Name="listAnimals" d:ItemsSource="{d:SampleData ItemCount=8}" Margin="362,48,229,189"/>
+        <Button Content="Add Animal to Zoo" HorizontalAlignment="Left" Margin="362,23,0,0" VerticalAlignment="Top" Width="134"/>
+        <Button Content="Delete Zoo" HorizontalAlignment="Left" Margin="34,227,0,0" VerticalAlignment="Top" Width="134"/>
+        <Button Content="Add Animal" HorizontalAlignment="Left" Margin="200,227,0,0" VerticalAlignment="Top" Width="134"/>
+        <Button Content="Delete Animal" HorizontalAlignment="Left" Margin="362,300,0,0" VerticalAlignment="Top" Width="134"/>
+        <TextBox HorizontalAlignment="Left" Margin="34,252,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="299"/>
+        <Button Content="Add Zoo" HorizontalAlignment="Left" Margin="34,275,0,0" VerticalAlignment="Top" Width="134"/>
+        <Button Content="Add Animal" HorizontalAlignment="Left" Margin="200,275,0,0" VerticalAlignment="Top" Width="134"/>
+        <Button Content="Update Zoo" HorizontalAlignment="Left" Margin="34,300,0,0" VerticalAlignment="Top" Width="134"/>
+        <Button Content="Update Animal" HorizontalAlignment="Left" Margin="200,300,0,0" VerticalAlignment="Top" Width="134"/>
 
     </Grid>
 </Window>
