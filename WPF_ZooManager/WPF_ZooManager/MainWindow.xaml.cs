@@ -54,7 +54,7 @@ namespace WPF_ZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
             }
         }
 
@@ -81,7 +81,7 @@ namespace WPF_ZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
             }
         }
 
@@ -130,7 +130,7 @@ namespace WPF_ZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
             }
         }
 
@@ -155,7 +155,7 @@ namespace WPF_ZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
             }
         }
 
@@ -183,13 +183,13 @@ namespace WPF_ZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
 
             }
             finally
             {
-                sqlConnection.Close();
                 ShowZoos();
+                sqlConnection.Close();
             }
 
         }
@@ -207,13 +207,13 @@ namespace WPF_ZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
 
             }
             finally
             {
-                sqlConnection.Close();
                 ShowAnimals();
+                sqlConnection.Close();
             }
 
         }
@@ -230,12 +230,12 @@ namespace WPF_ZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
             }
             finally 
             {
-                sqlConnection.Close();
                 ShowZoos();
+                sqlConnection.Close();
             } 
         }
 
@@ -251,12 +251,12 @@ namespace WPF_ZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
             }
             finally
             {
-                sqlConnection.Close();
                 ShowZoos();
+                sqlConnection.Close();
             }
         }
 
@@ -273,12 +273,12 @@ namespace WPF_ZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
             }
             finally
             {
-                sqlConnection.Close();
                 ShowAssociatedAnimals();
+                sqlConnection.Close();
             }
         }
 
@@ -295,13 +295,13 @@ namespace WPF_ZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
             }
             finally
             {
-                sqlConnection.Close();
                 ShowAnimals();
                 ShowAssociatedAnimals();
+                sqlConnection.Close();
             }
         }
 
@@ -317,12 +317,12 @@ namespace WPF_ZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
             }
             finally
             {
-                sqlConnection.Close();
                 ShowAnimals();
+                sqlConnection.Close();
             }
         }
 
@@ -338,12 +338,12 @@ namespace WPF_ZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
             }
             finally
             {
-                sqlConnection.Close();
                 ShowAnimals();
+                sqlConnection.Close();
             }
         }        
     }
