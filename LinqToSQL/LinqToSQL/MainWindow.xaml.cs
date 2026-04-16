@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +16,16 @@ using System.Windows.Shapes;
 
 namespace LinqToSQL
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        LinqToSqlDataClassesDataContext dataContext;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            string connectionString = ConfigurationManager.ConnectionStrings["LinqToSQL.Properties.Settings.dreenaDB2ConnectionString"].ConnectionString;
+            dataContext = new LinqToSqlDataClassesDataContext(connectionString);
         }
     }
 }
