@@ -33,5 +33,17 @@ namespace LinqToSQL.Properties {
                 return ((string)(this["dreenaDB2ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DEV-8718\\SQLEXPRESS;Initial Catalog=dreenaDB2;Persist Security Info=T" +
+            "rue;User ID=sa;Password=123456;Pooling=False;Encrypt=True;TrustServerCertificate" +
+            "=True")]
+        public string dreenaDB2ConnectionString1 {
+            get {
+                return ((string)(this["dreenaDB2ConnectionString1"]));
+            }
+        }
     }
 }
